@@ -1,15 +1,23 @@
 package com.eric.main
 
-import com.github.salomonbrys.kotson.*
+import com.github.salomonbrys.kotson.jsonArray
+import com.google.gson.Gson
+import com.google.gson.JsonArray
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.JsonPrimitive
-import com.google.gson.JsonArray
-import com.google.gson.Gson
+import java.io.File
+import java.io.FileReader
+import java.io.BufferedReader
 
 object Generator {
 
 	var base = '|';
+
+
+	fun gen(f: File): String {
+		return gen(f.bufferedReader().use { it.readText() });
+	}
 
 	fun gen(input: String): String {
 		val jsonElem = Gson().fromJson(input, JsonElement::class.java)

@@ -1,13 +1,5 @@
-import com.github.salomonbrys.kotson.*
-import java.io.File
-import com.google.gson.JsonObject
-import com.google.gson.JsonPrimitive
-import com.google.gson.Gson
-import com.google.gson.JsonArray
-import com.google.gson.JsonElement
-import java.lang.RuntimeException
 import com.eric.main.Generator
-
+import java.io.File
 
 fun main(args: Array<String>) {
 	val const = """
@@ -22,8 +14,17 @@ fun main(args: Array<String>) {
                    "name2":"hello3"
                  }]
                 """
-
-	val output = Generator.gen(const);
+	val output = if (args.size > 0) {
+		val input = if (args[0].isEmpty()) "" else args[0]
+		val f = File(input)
+		if (f.exists())
+			Generator.gen(const)
+		else {
+			Generator.gen(f)
+		}
+	} else {
+		Generator.gen(const)
+	}
 	println(output)
 
 }
