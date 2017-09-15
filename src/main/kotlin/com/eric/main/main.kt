@@ -21,9 +21,9 @@ fun main(args: Array<String>) {
                    "name":"hello",
                    "name2":"hello3"
                  }]
-               """
+                """
 
-	val output = Generator().gen(const);
+	val output = Generator.gen(const);
 	println(output)
 
 }

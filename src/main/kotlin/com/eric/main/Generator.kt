@@ -7,7 +7,7 @@ import com.google.gson.JsonPrimitive
 import com.google.gson.JsonArray
 import com.google.gson.Gson
 
-class Generator {
+object Generator {
 
 	var base = '|';
 
@@ -27,10 +27,10 @@ class Generator {
 			}
 		}
 
-
 		return outputBuilder.toString();
 	}
 
+	
 	fun toJsonArr(jsonElem: JsonElement): JsonArray {
 		val arr = if (jsonElem is JsonArray) {
 			jsonElem
@@ -41,7 +41,6 @@ class Generator {
 		}
 		return arr
 	}
-
 
 	fun genHeader(json: JsonObject): String {
 		val headerStr = StringBuilder()
@@ -60,7 +59,7 @@ class Generator {
 		val bodyStr = StringBuilder()
 		bodyStr.append(base)
 		for (entry in json.entrySet()) {
-			var value = entry.value
+			var value: JsonElement? = entry.value
 			val str = when (value) {
 				is JsonPrimitive -> value.toString().replace("\"", "")
 				else -> value.toString()
