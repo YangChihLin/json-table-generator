@@ -1,8 +1,9 @@
 [
 	{
-		"hello": "workd"
-	},
-	{
-		"hello": "world2"
+		"field1": "hello",
+		"field2": "world"
+	}, {
+		"field1": "this is",
+		"field2": "a example"
 	}
 ]

@@ -15,7 +15,11 @@ buildscript {
 
 
 task gen(type: Exec){
-    commandLine "java", "-jar", "./build/libs/json2table-${version}.jar", "${data}"
+    //if(null != System.getProperty("data")) {
+    //}
+    if(project.hasProperty("data")){
+        commandLine "java", "-jar", "./build/libs/json2table-${version}.jar", "${data}"
+    }
 }
 
 apply plugin: 'groovy'
