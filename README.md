@@ -1,4 +1,4 @@
-# json-table-generator
+# Json Table Generator
 Generate Markdown Table From JSON Data
 
 ## How to use
@@ -14,7 +14,7 @@ Assume that you have a file data.json
 		"field2": "world"
 	}, {
 		"field1": "this is",
-		"field2": "a example"
+		"field2": "an example"
 	}
 ]
 ```
@@ -39,14 +39,13 @@ you will see:
 |field1|field2|
 |:---:|:---:|
 |hello|world|
-|this is|a example|
+|this is|an example|
 
 ```
 
-### preview
-
+### Preview
 
 |field1|field2|
 |:---:|:---:|
 |hello|world|
-|this is|a example|
+|this is|an example|
