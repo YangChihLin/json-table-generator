@@ -22,7 +22,7 @@ Assume that you have a file data.json
 ### Build
 
 ```
-gradle build
+./gradlew build
 ```
 
 ### Generate 
@@ -30,7 +30,7 @@ gradle build
 Generating markdown table from json data 
 
 ```
-gradle gen -Pdata=data.json 
+./gradlew gen -Pdata=data.json 
 ```
 
 you will see:
